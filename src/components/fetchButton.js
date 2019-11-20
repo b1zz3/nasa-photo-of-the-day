@@ -3,7 +3,8 @@ import axios from "axios";
 
 
 function FetchButton() {
-    const [ imgData, setImgData] = useState(null);
+    const [imgUrl, setImgUrl] = useState(null);
+    const [imgTitle, setImgTitle] = useState(null);
 
   // api Key: eCrBvri7EO7Qzqsi47n3m9oqK0gqrhXRQiTJvLsc
 
@@ -11,10 +12,9 @@ function FetchButton() {
         // .get("https://dog.ceo/api/breed/hound/images/random/15")
         .get("https://api.nasa.gov/planetary/apod?api_key=eCrBvri7EO7Qzqsi47n3m9oqK0gqrhXRQiTJvLsc")
         .then(response => {
-            console.log(response);
-            setImgData(response.data.hdurl);
-            console.log("imgdat", imgData);
-            console.log("setImg",setImgData);
+            
+            setImgUrl(response.data.hdurl);
+            setImgTitle(response.data.title);
         })
         .catch(error => {
             console.log(error);
@@ -22,7 +22,8 @@ function FetchButton() {
 
     return (
         <div className="container">
-            <img className="APOD" alt="nassaImg" src={imgData} />
+            <h1>{imgTitle}</h1>
+            <img className="APOD" alt="nassaImg" src={imgUrl} />
         </div>
     );
 }
