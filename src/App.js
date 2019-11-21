@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
-import FetchButton from "./components/fetchButton";
+import Fetch from "./components/fetch";
 
 function App() {
   return (
     <div className="App">
-      <button>Get Image</button>
-      <FetchButton />
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      <div className="main-container">
+        <Fetch />
+      </div>
     </div>
   );
 }
