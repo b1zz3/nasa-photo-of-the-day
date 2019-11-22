@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <div className="main-container">
-        <Button>Reacstrap Button</Button>
+        <Button color="info">Reactstrap Button</Button>
         <Fetch />
       </div>
     </div>

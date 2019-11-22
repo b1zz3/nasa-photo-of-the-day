@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Card, CardBody, CardImg, CardText, CardTitle, CardSubtitle } from "reactstrap";
 
 
 export default function Fetch() {
@@ -8,7 +9,6 @@ export default function Fetch() {
   // api Key: eCrBvri7EO7Qzqsi47n3m9oqK0gqrhXRQiTJvLsc
     const didUpdate = () => {
         axios
-            // .get("https://dog.ceo/api/breed/hound/images/random/15")
             .get("https://api.nasa.gov/planetary/apod?api_key=eCrBvri7EO7Qzqsi47n3m9oqK0gqrhXRQiTJvLsc")
             .then(response => {
                 setRespData(response.data);
@@ -21,10 +21,15 @@ export default function Fetch() {
 
     return (
         <div className="container">
-            <button onClick={() => alert("change me") }>Get Image</button>
-            <h1>{respData.title}</h1>
-            <img className="APOD" alt="nassaImg" src={respData.hdurl} />
-            <p> { respData.explanation }</p>
+            <Card>
+                
+                <CardImg top width="80%" alt="nassaImg" src={respData.hdurl} />
+                <CardBody>
+                    <CardTitle>{ respData.title }</CardTitle>
+                    <CardSubtitle>{ respData.date }</CardSubtitle>
+                    <CardText> { respData.explanation }</CardText>
+                </CardBody>
+            </Card>
         </div>
     );
 };
