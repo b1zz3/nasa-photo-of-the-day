@@ -13,13 +13,17 @@ code {
 }
 
 .main-container {
-  width: 70%;
+  width: 90%;
   padding: 20px 20px 20px;
   margin: 0 auto;
-  background: lightblue;
+  background: rgb(70, 73, 119);
 }
 
 .container {
   width: 90%;
   margin: 5% auto;
+}
+
+h1 {
+  color: whitesmoke;
 }
